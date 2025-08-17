@@ -1,0 +1,13 @@
+[Unit]
+Description=Fidelity WiFi Network Monitor
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/sbin/fidelity --daemon --config /etc/fidelity/fidelity.yaml
+Restart=always
+RestartSec=10
+User=root
+
+[Install]
+WantedBy=multi-user.target
